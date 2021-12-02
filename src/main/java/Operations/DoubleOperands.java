@@ -1,7 +1,9 @@
 package Operations;
 
-import java.util.ArrayList;
-import java.util.Scanner;
+import java.util.*;
+import java.util.function.BiFunction;
+import java.util.stream.Collector;
+import java.util.stream.Stream;
 
 public class DoubleOperands {
     public static void main(String[] args) {
@@ -19,26 +21,30 @@ public class DoubleOperands {
         new DoubleOperands().rem(a, b);
         System.out.println("===============");
         new DoubleOperands().squr(a);
+
         //new DoubleOperands().findFloor(4);
         //new  DoubleOperands() .Sum(4,7);
     }
+    ImplementingOps obj;
+    public  BiFunction <Integer, Integer, Integer> bfobj = (x, y) -> x + y;
 
-    public void sum(int a, int b) {
+    public int sum(int a, int b) {
 
         ArrayList<Integer> twoList;
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
         twoList.add(b);
-        System.out.println(twoList.stream().reduce((x, y) -> x + y));
+
+        return a+b;
     }
-
-    public void sub(int a, int b) {
+    public int sub(int a, int b) {
 
         ArrayList<Integer> twoList;
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
         twoList.add(b);
-        System.out.println(twoList.stream().reduce((x, y) -> x - y).map(z -> z * -1));
+        return a-b;
+        //obj.output = twoList.stream().reduce((x, y) -> x - y).map(z -> z * -1);
     }
 
     public void mul(int a, int b) {
@@ -47,7 +53,7 @@ public class DoubleOperands {
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
         twoList.add(b);
-        System.out.println(twoList.stream().reduce((x, y) -> x * y));
+        obj.output =  twoList.stream().reduce((x, y) -> x * y).map(Objects::toString);
     }
 
     public void div(int a, int b) {
@@ -56,23 +62,23 @@ public class DoubleOperands {
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
         twoList.add(b);
-        System.out.println(twoList.stream().reduce((x, y) -> x / y));
+        obj.output = twoList.stream().reduce((x, y) -> x / y).map(Objects::toString);
     }
 
-    public void rem(int a, int b) {
+    public Optional<Float> rem(int a, int b) {
 
         ArrayList<Integer> twoList;
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
         twoList.add(b);
-        System.out.println(twoList.stream().reduce((x, y) -> x % y));
+        return twoList.stream().reduce((x, y) -> x % y).map(Float::new);
     }
 
-    public void squr(int a) {
+    public Stream<Integer> squr(int a) {
 
         ArrayList<Integer> twoList;
         twoList = new ArrayList<Integer>(2);
         twoList.add(a);
-        System.out.println(twoList.stream().map(z -> z * z));
+        return twoList.stream().map(z -> z * z);
     }
 }

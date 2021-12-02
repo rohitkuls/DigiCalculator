@@ -1,5 +1,7 @@
 package Operations;
 
+import java.util.Optional;
+
 interface Abc {
     <E> void Display(E[] output);
 
@@ -8,9 +10,11 @@ interface Abc {
 public class ImplementingOps implements Abc {
 
     ImplementingOps Obj = new ImplementingOps();
-
+    Optional<Object> output  ;
     public static void main(String[] args) {
         int a, b, c;
+
+
 
 
 
