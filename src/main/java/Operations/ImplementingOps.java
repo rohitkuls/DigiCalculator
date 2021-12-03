@@ -1,5 +1,8 @@
 package Operations;
 
+import java.util.Optional;
+import java.util.Scanner;
+
 interface Abc {
     <E> void Display(E[] output);
 
@@ -7,14 +10,31 @@ interface Abc {
 
 public class ImplementingOps implements Abc {
 
-    ImplementingOps Obj = new ImplementingOps();
-
+    ImplementingOps Objkjhh = new ImplementingOps();
+    Optional<Object> output  ;
     public static void main(String[] args) {
-        int a, b, c;
+        System.out.println("one or two");
+        
+
+        Scanner sc = new Scanner(System.in);
+        int a = sc.nextInt();
+        int b = sc.nextInt();
+        sc.close();
 
 
 
+        new DoubleOperands().sum(a, b);
+        new DoubleOperands().sub(a, b);
+        new DoubleOperands().mul(a, b);
+        new DoubleOperands().div(a, b);
+        new DoubleOperands().rem(a, b);
+        System.out.println("===============");
+        new DoubleOperands().squr(a);
+
+        //new DoubleOperands().findFloor(4);
+        //new  DoubleOperands() .Sum(4,7);
     }
+
 
     public <E> void Display(E[] output) {
         for (E i : output)
