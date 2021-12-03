@@ -13,7 +13,7 @@ public class IntegrationTestCases {
         int x = testTwo.sum(8,4)*testTwo.sub(3,5);
         assertThat(temp).isEqualTo(x);
         System.out.println("val"+x+temp);
-        System.out.println( assertWithMessage("Value"+x+temp));
+        System.out.println( assertWithMessage("Value"));
         System.out.println("===============");
 
 
