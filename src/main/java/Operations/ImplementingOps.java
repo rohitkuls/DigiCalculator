@@ -23,7 +23,7 @@ public class ImplementingOps implements Abc {
 
 
 
-        new DoubleOperands().sum(a, b);
+        new DoubleOperands().sum(a,b);
         new DoubleOperands().sub(a, b);
         new DoubleOperands().mul(a, b);
         new DoubleOperands().div(a, b);

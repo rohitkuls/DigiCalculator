@@ -13,15 +13,16 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.0'
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.0'
     testImplementation group: 'org.testng', name: 'testng', version: '7.4.0'
-
    // implementation group: 'com.dropbox.core', name: 'dropbox-core-sdk', version: '5.0.0'
     // https://mvnrepository.com/artifact/com.google.truth/truth
     testImplementation group: 'com.google.truth', name: 'truth', version: '1.1.3'
-
-
-
 }
 
 test {
-    useTestNG()
+    task testing(type: Test) {
+        description("This is a group usefull when executing test cases.")
+        useTestNG()
+        includeGroups("UnitTest")
+    }
+ useTestNG()
 }

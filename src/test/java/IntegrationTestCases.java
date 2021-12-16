@@ -10,7 +10,7 @@ public class IntegrationTestCases {
     @Test
     public void sumAndSub(){
         int temp = -24;
-        int x = testTwo.sum(8,4)*testTwo.sub(3,5);
+        int x = testTwo.sum(2,6)*testTwo.sub(3,5);
         assertThat(temp).isEqualTo(x);
         System.out.println("val"+x+temp);
         System.out.println( assertWithMessage("Value"));

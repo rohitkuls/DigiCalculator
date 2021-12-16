@@ -1,8 +1,10 @@
 package Operations;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Objects;
+import java.util.Optional;
+import java.util.Scanner;
 import java.util.function.BiFunction;
-import java.util.stream.Collector;
 import java.util.stream.Stream;
 
 public class DoubleOperands {
@@ -14,7 +16,7 @@ public class DoubleOperands {
         sc.close();
 
 
-        new DoubleOperands().sum(a, b);
+       new DoubleOperands().sum(a, b);
         new DoubleOperands().sub(a, b);
         new DoubleOperands().mul(a, b);
         new DoubleOperands().div(a, b);
@@ -26,21 +28,21 @@ public class DoubleOperands {
         //new  DoubleOperands() .Sum(4,7);
     }
     ImplementingOps obj;
-    public  BiFunction <Integer, Integer, Integer> bfobj = (x, y) -> x + y;
+    public  BiFunction <Integer, Integer, Integer> bfobj = Integer::sum;
 
     public int sum(int a, int b) {
 
         ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        twoList = new ArrayList<>(2);
         twoList.add(a);
         twoList.add(b);
-
         return a+b;
+//int a =5;
+//int b=10;
     }
     public int sub(int a, int b) {
 
-        ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        ArrayList<Integer> twoList = new ArrayList<>(2);
         twoList.add(a);
         twoList.add(b);
         return a-b;
@@ -50,7 +52,7 @@ public class DoubleOperands {
     public void mul(int a, int b) {
 
         ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        twoList = new ArrayList<>(2);
         twoList.add(a);
         twoList.add(b);
         obj.output =  twoList.stream().reduce((x, y) -> x * y).map(Objects::toString);
@@ -59,7 +61,7 @@ public class DoubleOperands {
     public void div(int a, int b) {
 
         ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        twoList = new ArrayList<>(2);
         twoList.add(a);
         twoList.add(b);
         obj.output = twoList.stream().reduce((x, y) -> x / y).map(Objects::toString);
@@ -68,17 +70,19 @@ public class DoubleOperands {
     public Optional<Float> rem(int a, int b) {
 
         ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        twoList = new ArrayList<>(2);
         twoList.add(a);
         twoList.add(b);
         return twoList.stream().reduce((x, y) -> x % y).map(Float::new);
     }
 
-    public Stream<Integer> squr(int a) {
+    public Stream<?> squr(int a) {
 
         ArrayList<Integer> twoList;
-        twoList = new ArrayList<Integer>(2);
+        twoList = new ArrayList<>(2);
         twoList.add(a);
         return twoList.stream().map(z -> z * z);
     }
+
+
 }
