@@ -19,10 +19,10 @@ dependencies {
 }
 
 test {
-    task testing(type: Test) {
-        description("This is a group usefull when executing test cases.")
-        useTestNG()
-        includeGroups("UnitTest")
-    }
+//    task testing(type: Test) {
+//        description("This is a group usefull when executing test cases.")
+//        useTestNG()
+//        includeGroups("UnitTest")
+//    }
  useTestNG()
 }
