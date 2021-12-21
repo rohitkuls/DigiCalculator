@@ -1,2 +1,3 @@
 rootProject.name = 'DigiCalculator'
+include 'CashCalculator'
 
